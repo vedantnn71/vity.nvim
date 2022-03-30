@@ -1,4 +1,4 @@
-![Vity.nvim logo](./logo.png)
+<p align="center"><img src="./logo.png" /></p>
 
 ## Vity.nvim - blazing fast and sexy neovim distribution!
 Coming soon ...
