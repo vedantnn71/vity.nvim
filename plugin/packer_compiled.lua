@@ -129,6 +129,12 @@ _G.packer_plugins = {
     path = "/home/vn/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
+    loaded = true,
+    path = "/home/vn/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/vn/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
@@ -148,6 +154,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vn/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
     url = "https://github.com/karb94/neoscroll.nvim"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/vn/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nord-vim"] = {
     loaded = true,
@@ -169,10 +180,20 @@ _G.packer_plugins = {
     path = "/home/vn/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-palenight.lua"] = {
+    loaded = true,
+    path = "/home/vn/.local/share/nvim/site/pack/packer/start/nvim-palenight.lua",
+    url = "https://github.com/kyazdani42/nvim-palenight.lua"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/vn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  onehalf = {
+    loaded = true,
+    path = "/home/vn/.local/share/nvim/site/pack/packer/start/onehalf",
+    url = "https://github.com/sonph/onehalf"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -276,7 +297,7 @@ _G.packer_plugins = {
     url = "https://github.com/mg979/vim-visual-multi"
   },
   vimwiki = {
-    config = { "\27LJ\2\ng\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\0\3\v.mdown\rmarkdown\14.markdown\rmarkdown\b.md\rmarkdown\23vimwiki_ext2syntax\6g\bvim\0" },
+    config = { "\27LJ\2\ng\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\0\3\b.md\rmarkdown\v.mdown\rmarkdown\14.markdown\rmarkdown\23vimwiki_ext2syntax\6g\bvim\0" },
     loaded = true,
     path = "/home/vn/.local/share/nvim/site/pack/packer/start/vimwiki",
     url = "https://github.com/vimwiki/vimwiki"
@@ -284,14 +305,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: vimwiki
+time([[Config for vimwiki]], true)
+try_loadstring("\27LJ\2\ng\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\0\3\b.md\rmarkdown\v.mdown\rmarkdown\14.markdown\rmarkdown\23vimwiki_ext2syntax\6g\bvim\0", "config", "vimwiki")
+time([[Config for vimwiki]], false)
 -- Config for: vim-moonfly-statusline
 time([[Config for vim-moonfly-statusline]], true)
 try_loadstring("\27LJ\2\nS\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0K\0\1\0\19moonflyItalics\23moonflyCursorColor\6g\bvim\0", "config", "vim-moonfly-statusline")
 time([[Config for vim-moonfly-statusline]], false)
--- Config for: vimwiki
-time([[Config for vimwiki]], true)
-try_loadstring("\27LJ\2\ng\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\0\3\v.mdown\rmarkdown\14.markdown\rmarkdown\b.md\rmarkdown\23vimwiki_ext2syntax\6g\bvim\0", "config", "vimwiki")
-time([[Config for vimwiki]], false)
 if should_profile then save_profiles() end
 
 end)

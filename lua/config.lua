@@ -3,25 +3,37 @@ vim.o.shiftwidth = 2
 vim.bo.tabstop = 2
 vim.o.relativenumber = true
 vim.o.mouse = "a"
+
+-- Autocomplete --
+vim.cmd([[
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+    silent call CocActionAsync('doHover')
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHoldI * :call <SID>show_hover_doc()
+autocmd CursorHold * :call <SID>show_hover_doc()
+]])
+
+-- Toggleterm --
 require("toggleterm").setup{
-  -- size can be a number or function which is passed the current terminal
   size = 20, 
   open_mapping = [[<c-\>]],
-  hide_numbers = true, -- hide the number column in toggleterm buffers
+  hide_numbers = true,
   shade_filetypes = {},
   shade_terminals = true,
   start_in_insert = true,
-  insert_mappings = true, -- whether or not the open mapping applies in insert mode
+  insert_mappings = true,
   persist_size = true,
   direction = 'horizontal',
-  close_on_exit = true, -- close the terminal window when the process exits
-  shell = vim.o.shell, -- change the default shell
-  -- This field is only relevant if direction is set to 'float'
+  close_on_exit = true,
+  shell = vim.o.shell,
   float_opts = {
-    -- The border key is *almost* the same as 'nvim_open_win'
-    -- see :h nvim_open_win for details on borders however
-    -- the 'curved' border is a custom border type
-    -- not natively supported but implemented in this plugin.
     border = 'curved',
     winblend = 3,
     highlights = {
@@ -30,10 +42,12 @@ require("toggleterm").setup{
     }
   }
 }
--- vim.cmd [[colorscheme nord]] --
+
+-- Color Scheme --
 vim.opt.termguicolors = true
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.g.material_style = "deep ocean"
+vim.cmd([[colorscheme nord]])
 
 vim.cmd([[set completeopt=menu,menuone,noselect]])
 
@@ -57,31 +71,24 @@ local cmp = require'cmp'
 
   cmp.setup({
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        vim.fn["vsnip#anonymous"](args.body)
       end,
     },
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-y>'] = cmp.config.disable,
       ['<C-e>'] = cmp.mapping({
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
       }),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
+      { name = 'vsnip' },
     }, {
       { name = 'buffer' },
     })
@@ -112,48 +119,12 @@ local cmp = require'cmp'
     })
   })
 
-  -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['javascrpt'].setup {
+  require('lspconfig')['pyright'].setup {
     capabilities = capabilities
   }
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
--- Move to previous/next
-map('n', '<A-,>', ':BufferPrevious<CR>', opts)
-map('n', '<A-.>', ':BufferNext<CR>', opts)
--- Re-order to previous/next
-map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
-map('n', '<A->>', ' :BufferMoveNext<CR>', opts)
--- Goto buffer in position...
-map('n', '<A-1>', ':BufferGoto 1<CR>', opts)
-map('n', '<A-2>', ':BufferGoto 2<CR>', opts)
-map('n', '<A-3>', ':BufferGoto 3<CR>', opts)
-map('n', '<A-4>', ':BufferGoto 4<CR>', opts)
-map('n', '<A-5>', ':BufferGoto 5<CR>', opts)
-map('n', '<A-6>', ':BufferGoto 6<CR>', opts)
-map('n', '<A-7>', ':BufferGoto 7<CR>', opts)
-map('n', '<A-8>', ':BufferGoto 8<CR>', opts)
-map('n', '<A-9>', ':BufferGoto 9<CR>', opts)
-map('n', '<A-0>', ':BufferLast<CR>', opts)
--- Close buffer
-map('n', '<A-c>', ':BufferClose<CR>', opts)
--- Wipeout buffer
---                 :BufferWipeout<CR>
--- Close commands
---                 :BufferCloseAllButCurrent<CR>
---                 :BufferCloseBuffersLeft<CR>
---                 :BufferCloseBuffersRight<CR>
--- Magic buffer-picking mode
-map('n', '<C-p>', ':BufferPick<CR>', opts)
--- Sort automatically by...
-map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
-map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
-
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used	
+  -- Lsp server setup --
+require 'lspconfig'.pyright.setup{}
+require 'impatient'
+require"startup".setup(require"configs.startup_nvim")
