@@ -17,13 +17,6 @@ require('packer').startup(function()
   }
   use 'stevearc/dressing.nvim'
   use 'luochen1990/rainbow'
-  use {
-	  'bluz71/vim-moonfly-statusline',
-	  config = function()
-	      vim.g.moonflyCursorColor = 1
-	      vim.g.moonflyItalics = 0
-	  end
-  }
   use 'vim-syntastic/syntastic'
   use {
     'nvim-telescope/telescope.nvim',

@@ -1,3 +1,5 @@
-### Lightest Neovim config on the planet (only 40 extensions)
-NOTE: Neovim nightly is required for this config, and is only optimized for cli not GUI neovim.
+![Vity.nvim logo](./logo.png)
+
+## Vity.nvim - blazing fast and sexy neovim distribution!
+Coming soon ...
 ![Screenshot of config](./screenshot.png)
