@@ -46,3 +46,11 @@ keymap('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 
 keymap('n', '<Space>mc', "require('material.functions').toggle_style()", opts)
 keymap('n', '<A-r>', 'vim.cmd "so ~/.config/nvim/init.lua"',opts)
+
+-- Press <C-b> to call specs!
+keymap('n', '<C-b>', ':lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
+
+-- You can even bind it to search jumping and more, example:
+keymap('n', 'n', 'n:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
+keymap('n', 'N', 'N:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
+
