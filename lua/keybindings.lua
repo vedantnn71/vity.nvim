@@ -16,6 +16,8 @@ keymap("n", "ff", ":lua require('telescope.builtin').find_files()<CR>", opts)
 keymap("n", "fb", ":lua require('telescope.builtin').buffers()<CR>", opts)
 keymap("n", "fg", ":lua require('telescope.builtin').live_grep()<CR>", opts)
 keymap("n", "fh", ":lua require('telescope.builtin').help_tags()<CR>", opts)
+keymap("n", "fc", ":lua require('telescope.builtin').colorscheme()<CR>", opts)
+keymap("n", "fn", ":lua require('startup').new_file()<CR>", opts)
 
 -- Move to previous/next
 keymap('n', '<A-,>', ':BufferPrevious<CR>', opts)
