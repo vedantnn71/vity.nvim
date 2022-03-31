@@ -39,19 +39,6 @@ local settings = {
         default_color = "",
         oldfiles_amount = 0,
     },
-    footer = {
-        type = "text",
-        oldfiles_directory = false,
-        align = "center",
-        fold_section = false,
-        title = "Footer",
-        margin = 5,
-        content = { "startup.nvim" },
-        highlight = "Number",
-        default_color = "",
-        oldfiles_amount = 0,
-    },
-
     options = {
         mapping_keys = true,
         cursor_column = 0.5,
@@ -70,6 +57,6 @@ local settings = {
         background = "#1f2227",
         folded_section = "#56b6c2",
     },
-    parts = { "header", "body", "footer" },
+    parts = { "header", "body" },
 }
 return settings
