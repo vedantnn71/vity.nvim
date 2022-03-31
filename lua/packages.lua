@@ -13,7 +13,7 @@ require('packer').startup(function()
   }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
   use 'stevearc/dressing.nvim'
   use 'luochen1990/rainbow'
@@ -21,7 +21,7 @@ require('packer').startup(function()
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
-	    {'nvim-lua/plenary.nvim'}
+      {'nvim-lua/plenary.nvim'}
     }
   }
   use {'prettier/vim-prettier'}
@@ -81,4 +81,5 @@ require('packer').startup(function()
     "startup-nvim/startup.nvim",
     requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
   }
+  use "nvim-treesitter/nvim-treesitter"
 end)
