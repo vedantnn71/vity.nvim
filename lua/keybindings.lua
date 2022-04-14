@@ -54,3 +54,17 @@ keymap('n', '<C-b>', ':lua require("specs").show_specs()<CR>', { noremap = true,
 keymap('n', 'n', 'n:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
 keymap('n', 'N', 'N:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
 
+vim.cmd([[
+function! s:WriteCreatingDirs()
+  let l:file=expand("%")
+  if empty(getbufvar(bufname("%"), '&buftype')) && l:file !~# '\v^\w+\:\/'
+    let dir=fnamemodify(l:file, ':h')
+    if !isdirectory(dir)
+      call mkdir(dir, 'p')
+    endif
+  endif
+  write
+endfunction
+
+command! W call s:WriteCreatingDirs()
+]])
