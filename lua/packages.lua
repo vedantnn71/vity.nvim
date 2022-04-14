@@ -1,40 +1,17 @@
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'arcticicestudio/nord-vim'
-  use {
-  'vimwiki/vimwiki',
-  config = function() 
-      vim.g.vimwiki_ext2syntax = {
-	  ['.md'] = 'markdown',
-	  ['.markdown'] = 'markdown',
-	  ['.mdown'] = 'markdown',
-      }
-  end
-  }
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
-  }
   use 'stevearc/dressing.nvim'
   use 'luochen1990/rainbow'
   use 'vim-syntastic/syntastic'
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = {
-      {'nvim-lua/plenary.nvim'}
-    }
-  }
-  use {'prettier/vim-prettier'}
-  use 'rust-lang/rust.vim';
+  use 'prettier/vim-prettier'
+  use 'rust-lang/rust.vim'
   use 'pangloss/vim-javascript'
   use 'leafgarland/typescript-vim'
   use 'mattn/emmet-vim'
   use 'peitalin/vim-jsx-typescript'
-  use {
-      'styled-components/vim-styled-components'
-  }
-  use {'neoclide/coc.nvim', branch = 'release'}
-  use {'mg979/vim-visual-multi'}
+  use 'styled-components/vim-styled-components'
+  use 'mg979/vim-visual-multi'
   use 'tpope/vim-surround'
   use 'akinsho/toggleterm.nvim'
   use 'skanehira/denops-docker.vim'
@@ -56,21 +33,29 @@ require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'sbdchd/neoformat'
   use 'williamboman/nvim-lsp-installer'
+  use 'kyazdani42/nvim-palenight.lua'
+  use 'sonph/onehalf'
+  use 'EdenEast/nightfox.nvim'
+  use 'lewis6991/impatient.nvim'
+  use 'dstein64/vim-startuptime'
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'preservim/nerdtree'
+  use 'edluffy/specs.nvim'
+  use 'kkvh/vim-docker-tools'
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release'
+  }
   use {
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
   }
-  use 'kyazdani42/nvim-palenight.lua'
-  use 'sonph/onehalf'
-  use 'EdenEast/nightfox.nvim'
   use {
     'lewis6991/gitsigns.nvim',
     config = function()
       require('gitsigns').setup()
     end
   }
-  use 'lewis6991/impatient.nvim'
-  use 'dstein64/vim-startuptime'
   use {
     'terrortylor/nvim-comment',
     config = function()
@@ -81,8 +66,22 @@ require('packer').startup(function()
     'startup-nvim/startup.nvim',
     requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'},
   }
-  use 'nvim-treesitter/nvim-treesitter'
-  use 'preservim/nerdtree'
-  use 'edluffy/specs.nvim'
-  use 'kkvh/vim-docker-tools'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {'nvim-lua/plenary.nvim'}
+  }
+  use {
+    'vimwiki/vimwiki',
+    config = function()
+        vim.g.vimwiki_ext2syntax = {
+        ['.md'] = 'markdown',
+        ['.markdown'] = 'markdown',
+        ['.mdown'] = 'markdown',
+        }
+    end
+  }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  }
 end)
