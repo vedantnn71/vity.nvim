@@ -55,13 +55,12 @@ vim.cmd [[
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 ]]
+
 vim.cmd[[
+let g:coc_global_extensions = []
+
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
 endif
 ]]
 vim.cmd([[let g:rainbow_active = 1]])
@@ -140,7 +139,7 @@ require'nvim-treesitter.configs'.setup {
 
 require('specs').setup { 
   show_jumps  = true,
-  min_jump = 1,
+  min_jump = 2,
   popup = {
     delay_ms = 0, -- delay before popup displays
     inc_ms = 10, -- time increments used for fade/resize effects 
