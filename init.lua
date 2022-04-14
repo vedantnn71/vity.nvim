@@ -1,5 +1,5 @@
 require('keybindings')
 require('packages')
 require('config')
-require('lualine_config')
+require('configs.lualine')
 require('startup').setup(require 'configs.startup_nvim')
