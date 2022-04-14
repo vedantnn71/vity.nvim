@@ -155,3 +155,4 @@ require('specs').setup {
   },
 }
 
+require('nvim-tree').setup {}

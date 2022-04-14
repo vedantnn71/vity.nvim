@@ -54,11 +54,11 @@ keymap('n', '<Space>mc', "require('material.functions').toggle_style()", opts)
 keymap('n', '<A-r>', 'vim.cmd "so ~/.config/nvim/init.lua"',opts)
 
 -- Press <C-b> to call specs 👓 --
-keymap('n', '<C-b>', ':lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
+keymap('n', '<C-b>', ':lua require("specs").show_specs()<CR>', opts)
 
 -- You can even bind it to search jumping and more, example: --
-keymap('n', 'n', 'n:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
-keymap('n', 'N', 'N:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
+keymap('n', 'n', 'n:lua require("specs").show_specs()<CR>', opts)
+keymap('n', 'N', 'N:lua require("specs").show_specs()<CR>', opts)
 
 -- Make directory if not exists with :W command --
 vim.cmd([[
@@ -75,3 +75,12 @@ endfunction
 
 command! W call s:WriteCreatingDirs()
 ]])
+
+
+-- Neovim Tree Keybindings --
+keymap('n', 'tt', ':NvimTreeToggle<CR>', opts)
+keymap('n', 'to', ':NvimTreeOpen<CR>', opts)
+keymap('n', 'tq', ':NvimTreeClose<CR>', opts)
+keymap('n', 'tr', ':NvimTreeRefresh<CR>', opts)
+keymap('n', 'tc', ':NvimTreeClipboard<CR>', opts)
+keymap('n', 'tf', ':NvimTreeFocus<CR>', opts)
