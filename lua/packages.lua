@@ -84,5 +84,5 @@ require('packer').startup(function()
   use 'nvim-treesitter/nvim-treesitter'
   use 'preservim/nerdtree'
   use 'edluffy/specs.nvim'
-
+  use 'kkvh/vim-docker-tools'
 end)
