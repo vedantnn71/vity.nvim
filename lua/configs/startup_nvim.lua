@@ -1,5 +1,5 @@
 local settings = {
-    -- every line should be same width without escaped \
+    -- every line should be same width without escaped \ --
     header = {
         type = "text",
         oldfiles_directory = false,
@@ -24,7 +24,7 @@ local settings = {
         default_color = "",
         oldfiles_amount = 0,
     },
-    -- name which will be displayed and command
+    -- name which will be displayed and command --
     body = {
         type = "mapping",
         oldfiles_directory = false,
@@ -64,4 +64,5 @@ local settings = {
     },
     parts = { "header", "body" },
 }
+
 return settings
