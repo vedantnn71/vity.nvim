@@ -42,6 +42,8 @@ require('packer').startup(function()
   use 'preservim/nerdtree'
   use 'edluffy/specs.nvim'
   use 'kkvh/vim-docker-tools'
+  use 'iamcco/markdown-preview.nvim'
+  use 'github/copilot.vim'
   use {
     'neoclide/coc.nvim',
     branch = 'release'
