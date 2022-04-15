@@ -24,6 +24,13 @@ keymap("n", "fc", ":lua require('telescope.builtin').colorscheme()<CR>", opts)
 keymap("n", "fn", ":lua require('startup').new_file()<CR>", opts)
 keymap("n", "fm", ":lua require('telescope').extensions.media_files.media_files()<CR>", opts)
 
+-- Telescope git keybindings --
+keymap("n", "fgf", ":lua require('telescope.builtin').git_files()<CR>", opts)
+keymap("n", "fgb", ":lua require('telescope.builtin').git_branches()<CR>", opts)
+keymap("n", "fgc", ":lua require('telescope.builtin').git_commits()<CR>", opts)
+keymap("n", "fgv", ":lua require('telescope.builtin').git_bcommits()<CR>", opts)
+keymap("n", "fgs", ":lua require('telescope.builtin').git_stash()<CR>", opts)
+
 -- Move to previous/next tab/buffer --
 keymap('n', '<A-,>', ':BufferPrevious<CR>', opts)
 keymap('n', '<A-.>', ':BufferNext<CR>', opts)
