@@ -22,6 +22,7 @@ keymap("n", "fg", ":lua require('telescope.builtin').live_grep()<CR>", opts)
 keymap("n", "fh", ":lua require('telescope.builtin').help_tags()<CR>", opts)
 keymap("n", "fc", ":lua require('telescope.builtin').colorscheme()<CR>", opts)
 keymap("n", "fn", ":lua require('startup').new_file()<CR>", opts)
+keymap("n", "fm", ":lua require('telescope').extensions.media_files.media_files()<CR>", opts)
 
 -- Move to previous/next tab/buffer --
 keymap('n', '<A-,>', ':BufferPrevious<CR>', opts)

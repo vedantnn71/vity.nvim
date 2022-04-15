@@ -39,6 +39,9 @@ require('packer').startup(function()
   use 'lewis6991/impatient.nvim'
   use 'dstein64/vim-startuptime'
   use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope-media-files.nvim'
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {

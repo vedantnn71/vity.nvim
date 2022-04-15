@@ -156,3 +156,4 @@ require('specs').setup {
 }
 
 require('nvim-tree').setup {}
+require('telescope').load_extension('media_files')
