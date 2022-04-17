@@ -1,5 +1,5 @@
 <h1 align="center">Vity ⚡</h1>
-<p align="center">IDE-ish bloated neovim distro (WIP ⚒️)<./p>
+<p align="center">IDE-ish bloated neovim distro (WIP ⚒️)</p>
 
 <div align="center">
   
