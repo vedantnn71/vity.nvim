@@ -53,7 +53,11 @@ local plugins = {
    },
    'edluffy/specs.nvim',
    'kkvh/vim-docker-tools',
-   'iamcco/markdown-preview.nvim',
+   {
+    'iamcco/markdown-preview.nvim',
+    ft = 'markdown',
+    run = 'cd app && yarn install'
+   },
    'github/copilot.vim',
    {
     'neoclide/coc.nvim',
