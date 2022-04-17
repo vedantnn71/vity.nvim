@@ -1,5 +1,14 @@
-<p align="center"><img src="./logo.png" /></p>
+<h1 align="center">Vity ⚡</h1>
+<p align="center">IDE-ish bloated neovim distro.</p>
 
-## Vity.nvim - blazing fast and sexy neovim distribution!
-![Screenshot of config](./screenshot.png)
-![Screenshot of startup screen](./startup.png)
+<div align="center">
+  
+![Lua](https://img.shields.io/badge/Lua-blue.svg?&style=for-the-badge&logo=lua&logoColor=white)
+![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?&style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0)
+
+</div>
+
+## Showcase
+![Vity start screen](./screenshots/startup.png)
+![Coding in vity](./screenshots/completion.png)
