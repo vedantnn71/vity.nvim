@@ -32,8 +32,9 @@ require('config.coc').setup()
 require('config.cmp').setup()
 require('config.treesitter').setup()
 require('config.specs').setup()
+require('config.lualine').setup()
+
 require 'impatient'
 require('nvim-tree').setup(require('config.tree'))
-require('config.lualine').setup()
 require('startup').setup(require 'config.startup_nvim')
-
+require('which-key').setup{}

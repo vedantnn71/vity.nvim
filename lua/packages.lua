@@ -43,6 +43,7 @@ require('packer').startup(function()
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope-media-files.nvim'
+  use 'folke/which-key.nvim'
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
