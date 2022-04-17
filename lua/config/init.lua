@@ -5,8 +5,6 @@ vim.o.relativenumber = true
 vim.o.mouse = "a"
 vim.g.rainbow_active = 1
 
-vim.cmd("colorscheme onedark")
-
 -- Syntax Highlighting --
 vim.cmd [[
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
@@ -29,6 +27,7 @@ require 'lspconfig'.cssls.setup{}
 require 'lspconfig'.python.setup{}
 
 require('config.autocomplete').setup()
+require('onedarkpro').load()
 require('config.toggleterm').setup()
 require('config.coc').setup()
 require('config.cmp').setup()
@@ -41,3 +40,4 @@ require('nvim-tree').setup(require('config.tree'))
 require('startup').setup(require 'config.startup_nvim')
 require('which-key').setup{}
 require('colorizer').setup()
+require("bufferline").setup{}

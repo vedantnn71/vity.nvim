@@ -6,7 +6,7 @@ local plugins = {
    'stevearc/dressing.nvim',
    'luochen1990/rainbow',
    'vim-syntastic/syntastic',
-   'ful1e5/onedark.nvim',
+   'olimorris/onedarkpro.nvim',
    'prettier/vim-prettier',
    'rust-lang/rust.vim',
    'pangloss/vim-javascript',
@@ -44,6 +44,11 @@ local plugins = {
    'nvim-treesitter/nvim-treesitter',
    'folke/which-key.nvim',
    'nvim-telescope/telescope-media-files.nvim',
+   {
+     'akinsho/bufferline.nvim',
+     tag = "*",
+     requires = 'kyazdani42/nvim-web-devicons'
+   },
    'NvChad/nvim-colorizer.lua',
    {
     'kyazdani42/nvim-tree.lua',
@@ -62,10 +67,6 @@ local plugins = {
    {
     'neoclide/coc.nvim',
     branch = 'release'
-   },
-   {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
    },
    {
     'lewis6991/gitsigns.nvim',
