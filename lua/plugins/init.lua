@@ -1,8 +1,4 @@
-local present, packer = pcall(require, {init_file="plugins.initPlugins"})
-
-if not present then
-   return false
-end
+local packer = require("plugins.initPacker")
 
 local plugins = {
    'wbthomason/packer.nvim',
