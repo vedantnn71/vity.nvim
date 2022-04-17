@@ -5,6 +5,8 @@ vim.o.relativenumber = true
 vim.o.mouse = "a"
 vim.g.rainbow_active = 1
 
+vim.cmd("colorscheme onedark")
+
 -- Syntax Highlighting --
 vim.cmd [[
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart

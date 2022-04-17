@@ -42,6 +42,8 @@ local plugins = {
    'lewis6991/impatient.nvim',
    'dstein64/vim-startuptime',
    'nvim-treesitter/nvim-treesitter',
+   'folke/which-key.nvim',
+   'nvim-telescope/telescope-media-files.nvim',
    {
     'kyazdani42/nvim-tree.lua',
     requires = {
