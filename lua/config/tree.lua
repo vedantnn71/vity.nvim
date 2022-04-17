@@ -1,4 +1,4 @@
-local tree ={}
+local tree = {}
 
 tree.open = function ()
    require'bufferline.state'.set_offset(31, 'FileTree')

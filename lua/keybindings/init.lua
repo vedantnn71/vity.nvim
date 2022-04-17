@@ -3,11 +3,9 @@ local opts = { noremap = true, silent = true }
 local tab_leader = "<Space>t"
 local telescope_leader = "f"
 
---[[
-Some basic keybindings for lazy people like me 😴
--> Control+S - save
--> Control+<standard vim arrow keys> - scroll <left/down/right/up>
-]]--
+-- Some basic keybindings for lazy people like me 😴 --
+-- -> Control+S - save --
+-- -> Control+<standard vim arrow keys> - scroll <left/down/right/up> --
 keymap('n', '<c-s>', ':w<CR>', {})
 keymap('i', '<c-s>', '<Esc>:w<CR>a', {})
 keymap('n', '<c-j>', '<c-w>j', opts)
