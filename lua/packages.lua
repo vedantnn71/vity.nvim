@@ -4,6 +4,7 @@ require('packer').startup(function()
   use 'stevearc/dressing.nvim'
   use 'luochen1990/rainbow'
   use 'vim-syntastic/syntastic'
+  use 'ful1e5/onedark.nvim'
   use 'prettier/vim-prettier'
   use 'rust-lang/rust.vim'
   use 'pangloss/vim-javascript'
