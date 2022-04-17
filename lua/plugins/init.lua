@@ -44,6 +44,7 @@ local plugins = {
    'nvim-treesitter/nvim-treesitter',
    'folke/which-key.nvim',
    'nvim-telescope/telescope-media-files.nvim',
+   'NvChad/nvim-colorizer.lua',
    {
     'kyazdani42/nvim-tree.lua',
     requires = {

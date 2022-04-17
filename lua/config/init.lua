@@ -40,3 +40,4 @@ require 'impatient'
 require('nvim-tree').setup(require('config.tree'))
 require('startup').setup(require 'config.startup_nvim')
 require('which-key').setup{}
+require('colorizer').setup()
