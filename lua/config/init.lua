@@ -21,10 +21,7 @@ require 'lspconfig'.html.setup{}
 require 'lspconfig'.gopls.setup{}
 require 'lspconfig'.sumneko_lua.setup{}
 require 'lspconfig'.vimls.setup{}
-require 'lspconfig'.css.setup{}
 require 'lspconfig'.jsonls.setup{}
-require 'lspconfig'.cssls.setup{}
-require 'lspconfig'.python.setup{}
 
 require('config.autocomplete').setup()
 require('onedarkpro').load()
@@ -40,4 +37,13 @@ require('nvim-tree').setup(require('config.tree'))
 require('startup').setup(require 'config.startup_nvim')
 require('which-key').setup{}
 require('colorizer').setup()
-require("bufferline").setup{}
+require('bufferline').setup{
+  offsets = {
+    {
+      filetype = "NvimTree",
+      text = "File Explorer",
+      highlight = "Directory",
+      text_align = "left"
+    }
+  }
+}
