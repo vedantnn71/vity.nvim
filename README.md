@@ -22,7 +22,7 @@
 
 ## Installation
 To install, just clone the repo in the `~/.config/nvim` directory, you may want to back your current configuration.
-> P.S: Vity is currently in WIP, so it is is a bit buggy. Your contributions are highly appreciated!
+> P.S: Vity is currently in WIP, so it is a bit buggy. Your contributions are highly appreciated!
 
 #### On Linux
 ```bash
